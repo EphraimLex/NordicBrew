@@ -1,0 +1,354 @@
+/* Include padding and borders in each element's total width. */
+* {
+    box-sizing: border-box;
+}
+
+/* Keep hidden elements invisible, even when other rules set display.
+   JavaScript will use this for the menu filters and product cards. */
+[hidden] {
+    display: none !important;
+}
+
+/* Store reusable colors in one place for easy updates. */
+:root {
+    --color-background: #f7f3ec;
+    --color-text: #332820;
+    --color-primary: #365544;
+    --color-primary-hover: #284033;
+    --color-card: #ffffff;
+    --color-border: #ddd4c7;
+}
+
+/* Base typography and page colors. */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* Center the content and leave space along the screen edges. */
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Georgia gives headings a different character from the body text. */
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    font-family: Georgia, serif;
+    line-height: 1.2;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+a {
+    color: var(--color-primary);
+}
+
+/* Make keyboard focus clearly visible on links and buttons. */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-text);
+    outline-offset: 4px;
+}
+
+/* Keep future photographs within their containers. */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header: place the brand and navigation side by side when space allows. */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.brand {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Remove list markers and arrange navigation links horizontally. */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 8px 0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Give every section consistent vertical spacing. */
+section {
+    padding: 56px 0;
+}
+
+/* Add a subtle divider between neighbouring sections. */
+section + section {
+    border-top: 1px solid var(--color-border);
+}
+
+/* Home: two equal columns for the introduction and image. */
+.hero {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content p {
+    margin-bottom: 24px;
+    font-size: 20px;
+}
+
+/* Style the menu link as a button while keeping its link behaviour. */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    color: var(--color-card);
+    background-color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Temporary image areas; we will replace these with photographs. */
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    padding: 24px;
+    border: 1px dashed var(--color-primary);
+    border-radius: 8px;
+    background-color: var(--color-border);
+    text-align: center;
+}
+
+.hero .image-placeholder {
+    min-height: 320px;
+}
+
+/* Limit paragraph width to keep longer text comfortable to read. */
+#about p {
+    max-width: 750px;
+}
+
+/* Menu controls will become visible when JavaScript removes hidden. */
+.menu-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.menu-filters button {
+    padding: 10px 22px;
+    border: 1px solid var(--color-primary);
+    border-radius: 6px;
+    font: inherit;
+    font-weight: bold;
+    color: var(--color-primary);
+    background-color: var(--color-card);
+    cursor: pointer;
+}
+
+.menu-filters button:hover {
+    background-color: var(--color-background);
+}
+
+/* Use the accessibility state to style the selected filter. */
+.menu-filters button[aria-pressed="true"] {
+    color: var(--color-card);
+    background-color: var(--color-primary);
+}
+
+/* Desktop: three columns for menu cards and gallery images.
+   minmax(0, 1fr) lets columns shrink without forcing overflow. */
+.menu-grid,
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* Stack card content so prices align at the bottom of each row. */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-card);
+}
+
+.menu-item .price {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 8px;
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Contact: details and opening hours in two columns. */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    margin-top: 24px;
+    overflow-wrap: anywhere;
+}
+
+/* Browsers normally display address text in italics. */
+address {
+    margin-bottom: 16px;
+    font-style: normal;
+}
+
+/* Pair each day group with its opening hours. */
+.opening-hours {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 24px;
+    margin: 0;
+}
+
+.opening-hours dt {
+    font-weight: bold;
+}
+
+.opening-hours dd {
+    margin: 0;
+}
+
+/* Footer: separate it from the main content with a border. */
+footer {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Tablet: use two columns for the menu and gallery. */
+@media (max-width: 900px) {
+    .menu-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        gap: 24px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}
+
+/* Mobile: stack the header and content into single columns. */
+@media (max-width: 600px) {
+    header,
+    main,
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    nav ul {
+        gap: 4px 16px;
+    }
+
+    section {
+        padding: 36px 0;
+    }
+
+    .hero,
+    .menu-grid,
+    .gallery-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .hero .image-placeholder {
+        min-height: 240px;
+    }
+
+    .contact-grid {
+        gap: 24px;
+    }
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Support characters such as å, ä, and ö. -->
+    <meta charset="UTF-8">
+
+    <!-- Allow responsive layouts to use the device width. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Summary that search engines may display in search results. -->
+    <meta name="description"
+          content="Nordic Brew is a fictional coffee shop offering coffee, tea, pastries, and light sandwiches.">
+
+    <title>Nordic Brew | Modern Coffee Shop</title>
+
+    <!-- External styles and JavaScript. -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Header: business name and navigation within this page. -->
+    <header>
+        <a class="brand" href="#home">Nordic Brew</a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <!-- Each link targets a section with the matching id. -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home: introduction beside the main café image. -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Nordic Brew</h1>
+
+                <p>
+                    Your everyday pause for good coffee, fresh pastries,
+                    and warm company.
+                </p>
+
+                <!-- This navigates to the menu, so it remains a link. -->
+                <a class="button" href="#menu">View our menu</a>
+            </div>
+
+            <!-- Dimensions reserve space before the image finishes loading.
+                 The hero loads immediately because it appears near the top. -->
+            <img class="hero-image"
+                 src="images/cafe-hero.png"
+                 alt="Light wooden tables, green seating, and a coffee counter in a sunlit café."
+                 width="1536"
+                 height="1024">
+        </section>
+
+        <!-- About: the fictional café's story and atmosphere. -->
+        <section id="about">
+            <h2>About Nordic Brew</h2>
+
+            <p>
+                Nordic Brew is a neighbourhood coffee shop inspired by
+                the Scandinavian tradition of taking a break and enjoying
+                the moment. We serve coffee, tea, pastries, and light
+                sandwiches in a warm and welcoming space.
+            </p>
+
+            <p>
+                Whether you are meeting a friend, studying, or simply
+                enjoying a quiet cup of coffee, there is a place for you here.
+            </p>
+        </section>
+
+        <!-- Menu: products with descriptions and example prices. -->
+        <section id="menu">
+            <h2>Our menu</h2>
+
+            <p>Find your favourite drink or something delicious to eat.</p>
+
+            <!-- JavaScript reveals the controls after setting up filtering.
+                 Without JavaScript, all products remain visible. -->
+            <div class="menu-filters"
+                 role="group"
+                 aria-label="Filter menu"
+                 hidden>
+
+                <!-- data-filter stores the category.
+                     aria-pressed indicates the selected button. -->
+                <button type="button"
+                        data-filter="all"
+                        aria-pressed="true">
+                    All
+                </button>
+
+                <button type="button"
+                        data-filter="drinks"
+                        aria-pressed="false">
+                    Drinks
+                </button>
+
+                <button type="button"
+                        data-filter="food"
+                        aria-pressed="false">
+                    Food
+                </button>
+            </div>
+
+            <div class="menu-grid">
+                <!-- JavaScript reads data-category when filtering cards. -->
+                <article class="menu-item" data-category="drinks">
+                    <h3>Filter coffee</h3>
+                    <p>
+                        Freshly brewed coffee with a rich, balanced flavour.
+                    </p>
+                    <p class="price">30 SEK</p>
+                </article>
+
+                <article class="menu-item" data-category="drinks">
+                    <h3>Cappuccino</h3>
+                    <p>
+                        Espresso topped with steamed milk and soft milk foam.
+                    </p>
+                    <p class="price">42 SEK</p>
+                </article>
+
+                <article class="menu-item" data-category="drinks">
+                    <h3>Tea</h3>
+                    <p>
+                        A comforting selection of black, green, and herbal teas.
+                    </p>
+                    <p class="price">28 SEK</p>
+                </article>
+
+                <article class="menu-item" data-category="food">
+                    <h3>Cinnamon bun</h3>
+                    <p>
+                        A soft Swedish classic with cinnamon and pearl sugar.
+                    </p>
+                    <p class="price">32 SEK</p>
+                </article>
+
+                <article class="menu-item" data-category="food">
+                    <h3>Croissant</h3>
+                    <p>
+                        A buttery, flaky pastry to enjoy with your coffee.
+                    </p>
+                    <p class="price">30 SEK</p>
+                </article>
+
+                <article class="menu-item" data-category="food">
+                    <h3>Cheese sandwich</h3>
+                    <p>
+                        A light sandwich with cheese, lettuce, and tomato.
+                    </p>
+                    <p class="price">55 SEK</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Gallery: AI-generated images illustrating the fictional café. -->
+        <section id="gallery">
+            <h2>A glimpse of Nordic Brew</h2>
+
+            <p>A cosy space, a favourite cup, and something freshly baked.</p>
+
+            <!-- Lazy loading lets the browser defer off-screen images. -->
+            <div class="gallery-grid">
+                <img src="images/cafe-interior.png"
+                     alt="Wooden tables beside a window and a green upholstered café bench."
+                     width="1536"
+                     height="1024"
+                     loading="lazy">
+
+                <img src="images/coffee.png"
+                     alt="Cappuccino with latte art in a speckled ceramic cup on a wooden table."
+                     width="1536"
+                     height="1024"
+                     loading="lazy">
+
+                <img src="images/pastries.png"
+                     alt="Two cinnamon buns and two croissants on a parchment-lined baking tray."
+                     width="1536"
+                     height="1024"
+                     loading="lazy">
+            </div>
+        </section>
+
+        <!-- Contact: example details, not an actual business location. -->
+        <section id="contact">
+            <h2>Visit Nordic Brew</h2>
+
+            <p>
+                This café is fictional. The details below are examples
+                for this educational project.
+            </p>
+
+            <div class="contact-grid">
+                <div>
+                    <h3>Find us</h3>
+
+                    <!-- Semantic markup for contact information. -->
+                    <address>
+                        Nordic Brew<br>
+                        Bellevuegatan 12<br>
+                        Sjöbo, Sweden
+                    </address>
+
+                    <!-- Not linked because this is not a working address. -->
+                    <p>Email: hello@nordicbrew.nu</p>
+                </div>
+
+                <div>
+                    <h3>Opening hours</h3>
+
+                    <!-- Pair each day group with its opening hours. -->
+                    <dl class="opening-hours">
+                        <dt>Monday–Friday</dt>
+                        <dd>08:00–18:00</dd>
+
+                        <dt>Saturday</dt>
+                        <dd>09:00–17:00</dd>
+
+                        <dt>Sunday</dt>
+                        <dd>10:00–16:00</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Nordic Brew.
+            A fictional business for an educational project.
+        </p>
+        <p>Images are AI-generated.</p>
+    </footer>
+</body>
+</html>
