@@ -7,6 +7,11 @@ project using HTML, CSS, and JavaScript.
 The website helps visitors explore the menu, learn about the café,
 view images, and find example contact details and opening hours.
 
+## Project Links
+
+- [Live website](https://ephraimlex.github.io/NordicBrew/)
+- [GitHub repository](https://github.com/ephraimlex/NordicBrew)
+
 ## Features
 
 - Home section with a café image and a link to the menu
@@ -23,6 +28,8 @@ view images, and find example contact details and opening hours.
 - HTML5: semantic page structure and content
 - CSS3: styling, Flexbox, Grid, and media queries
 - JavaScript: menu filtering and button state updates
+- Git and GitHub: version control and source code hosting
+- GitHub Pages: website deployment
 
 No CSS frameworks or JavaScript libraries are used.
 
@@ -32,9 +39,11 @@ No CSS frameworks or JavaScript libraries are used.
 - css/style.css — Styling and responsive layouts
 - js/script.js — Menu filtering
 - images/ — AI-generated café and product images
-- docs/planning.md — Project plan and design decisions
-- docs/NordicBrew_Wireframes.pptx — Editable desktop and mobile wireframes
 - README.md — Project overview and running instructions
+
+Planning materials are maintained in the project's docs folder:
+- planning.md — Project plan and design decisions
+- NordicBrew_Wireframes.pptx — Desktop and mobile wireframes
 
 ## Run Locally
 
@@ -54,8 +63,9 @@ muted green accents, and white menu cards.
 - Maximum content width: 1100px
 
 Menu and gallery layouts use:
+
 - Three columns above 900px
-- Two columns from 601px to 900px
+- Two columns above 600px and up to 900px
 - One column at 600px and below
 
 The Home and Contact sections also stack vertically on mobile.
@@ -69,10 +79,12 @@ behaviour: visitors can choose which menu products to display.
 ### How Menu Filtering Works
 
 The HTML contains custom data attributes:
+
 - data-filter identifies each filter button's category.
 - data-category identifies each product's category.
 
 When a visitor clicks All, Drinks, or Food, JavaScript:
+
 1. Reads the selected category.
 2. Checks each product's category.
 3. Shows matching products and hides the others.
@@ -120,7 +132,9 @@ called progressive enhancement.
 
 ## Manual Testing
 
-The following checks passed during local browser testing:
+### Local Browser Checks
+
+The following checks passed:
 
 - Navigation links reach the correct sections.
 - Drinks displays the three drinks.
@@ -136,6 +150,26 @@ The following checks passed during local browser testing:
 Responsive checks were performed by resizing the browser window.
 Testing on physical mobile devices has not yet been recorded.
 
+### Live Website Checks
+
+After deployment to GitHub Pages, the following were confirmed:
+
+- The website opens at its public URL.
+- All four images load correctly.
+- The All, Drinks, and Food filters work.
+
+## Deployment
+
+The website is published using GitHub Pages.
+
+Deployment settings:
+
+- Source: Deploy from a branch
+- Branch: main
+- Folder: / (root)
+
+Changes pushed to main trigger an updated deployment.
+
 ## Images and Fictional Content
 
 The four website images were generated using OpenAI's image
@@ -149,12 +183,7 @@ are demonstration content.
 
 ## Project Status
 
-The HTML, CSS, JavaScript interaction, images, and initial
-manual browser checks are complete.
+The website is implemented, manually tested, and deployed.
 
-Remaining work:
-- Publish the project in a public GitHub repository.
-- Deploy the website with GitHub Pages.
-- Add the repository and live website links to this README.
-- Verify the deployed website.
-- Complete the presentation slides.
+The GitHub repository and live website links are provided above.
+Presentation slides are still being prepared.
